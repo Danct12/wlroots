@@ -23,7 +23,12 @@ add_project_arguments(
 
 		'-Wno-unused-parameter',
 		'-Wundef',
+		'-I/usr/include/android',
 	],
+	language: 'c',
+)
+add_project_link_arguments(
+	'-lhardware,-lsync,-lhybris-hwcomposerwindow',
 	language: 'c',
 )
 
