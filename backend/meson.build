@@ -13,7 +13,6 @@ backend_files = files(
 	'headless/output.c',
 	'hwcomposer/backend.c',
 	'hwcomposer/hwcomposer.c',
-	'hwcomposer/input_device.c',
 	'hwcomposer/output.c',
 	'libinput/backend.c',
 	'libinput/events.c',
