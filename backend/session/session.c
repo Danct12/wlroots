@@ -17,12 +17,14 @@
 
 extern const struct session_impl session_logind;
 extern const struct session_impl session_direct;
+extern const struct session_impl session_fake;
 
 static const struct session_impl *impls[] = {
 #if WLR_HAS_SYSTEMD || WLR_HAS_ELOGIND
 	&session_logind,
 #endif
 	&session_direct,
+	&session_fake,
 	NULL,
 };
 
