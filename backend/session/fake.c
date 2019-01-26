@@ -63,7 +63,7 @@ static void fake_session_close(struct wlr_session *base, int fd) {
 	struct fake_session *session = wl_container_of(base, session, base);
 	struct stat st;
 	if (fstat(fd, &st) < 0) {
-		wlr_log_errno(L_ERROR, "Stat failed");
+		wlr_log_errno(WLR_ERROR, "Stat failed");
 		close(fd);
 		return;
 	}
@@ -87,7 +87,7 @@ static void fake_session_destroy(struct wlr_session *base) {
 static struct wlr_session *fake_session_create(struct wl_display *disp) {
 	struct fake_session *session = calloc(1, sizeof(*session));
 	if (!session) {
-		wlr_log_errno(L_ERROR, "Allocation failed");
+		wlr_log_errno(WLR_ERROR, "Allocation failed");
 		return NULL;
 	}
 
@@ -97,7 +97,7 @@ static struct wlr_session *fake_session_create(struct wl_display *disp) {
 		seat = "seat0";
 	}
 
-	wlr_log(L_INFO, "Successfully loaded fake session");
+	wlr_log(WLR_INFO, "Successfully loaded fake session");
 
 	snprintf(session->base.seat, sizeof(session->base.seat), "%s", seat);
 	session->base.impl = &session_fake;
