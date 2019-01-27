@@ -28,7 +28,11 @@ add_project_arguments(
 	language: 'c',
 )
 add_project_link_arguments(
-	'-lhardware,-lsync,-lhybris-hwcomposerwindow',
+	[
+		'-lhardware',
+		'-lsync',
+		'-lhybris-hwcomposerwindow',
+	],
 	language: 'c',
 )
 
