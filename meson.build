@@ -19,7 +19,17 @@ soversion = 5
 
 add_project_arguments([
 	'-DWLR_USE_UNSTABLE',
+	'-I/usr/include/android',
 ], language: 'c')
+
+add_project_link_arguments(
+	[
+		'-lhardware',
+		'-lsync',
+		'-lhybris-hwcomposerwindow',
+	],
+	language: 'c',
+)
 
 cc = meson.get_compiler('c')
 
