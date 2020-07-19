@@ -118,6 +118,8 @@ void hwc_present_hwcomposer2(void *user_data, struct ANativeWindow *window,
 
 	hwc2_compat_display_t* hwcDisplay = hwc->hwc2_primary_display;
 
+	hwc2_compat_display_set_power_mode(hwcDisplay, HWC2_POWER_MODE_ON);
+
     error = hwc2_compat_display_validate(hwcDisplay, &numTypes,
                                                     &numRequests);
     if (error != HWC2_ERROR_NONE && error != HWC2_ERROR_HAS_CHANGES) {
